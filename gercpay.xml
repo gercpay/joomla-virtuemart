@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<extension version="3.1" type="plugin" group="vmpayment">
+    <name>VM Payment - GercPay Payment Gateway</name>
+    <creationDate>2023-08-07</creationDate>
+    <author>GercPay</author>
+    <authorUrl>https://gercpay.com.ua</authorUrl>
+    <copyright>GercPay</copyright>
+    <license>GNU/GPLv3 http://www.gnu.org/licenses/gpl-3.0.html</license>
+    <version>1.2.2</version>
+    <description>VirtueMart GercPay payment plugin</description>
+
+    <files>
+        <filename plugin="gercpay">gercpay.php</filename>
+        <filename>GercPay.cls.php</filename>
+        <filename>index.html</filename>
+        <filename>gercpay.png</filename>
+        <folder>language</folder>
+        <folder>assets</folder>
+    </files>
+
+    <vmconfig>
+        <fields name="params">
+            <fieldset name="payment" addpath="/administrator/components/com_virtuemart/fields">
+                <field type="vmfiles"
+                       name="payment_logos"
+                       label="VMPAYMENT_GERCPAY_LOGOS"
+                       description="VMPAYMENT_GERCPAY_LOGOS_DESC"
+                       directory="/plugins/vmpayment/gercpay"
+                       default="gercpay.png"
+                       hide_default="1"
+                       hide_none="1"
+                       stripext="0"
+                       exclude=".*\.(php|html|xml|wsdl|md)"
+                />
+                <field name="gercpay_merchant_account"
+                       type="text"
+                       label="VMPAYMENT_GERCPAY_GERCPAY_MERCHANT"
+                       description="VMPAYMENT_GERCPAY_GERCPAY_MERCHANT_DESC"
+                />
+                <field name="gercpay_secret_key"
+                       type="text"
+                       label="VMPAYMENT_GERCPAY_GERCPAY_SECRET_KEY"
+                       description="VMPAYMENT_GERCPAY_GERCPAY_SECRET_KEY_DESC"
+                />
+                <field name="gercpay_language"
+                       type="list"
+                       default="RU"
+                       label="VMPAYMENT_GERCPAY_GERCPAY_LANGUAGE"
+                       description="VMPAYMENT_GERCPAY_GERCPAY_LANGUAGE_DESC"
+                >
+                    <option value="RU">RU</option>
+                    <option value="EN">EN</option>
+                    <option value="UA">UA</option>
+                </field>
+                <field name="gercpay_currency"
+                       type="list"
+                       default="RU"
+                       label="VMPAYMENT_GERCPAY_GERCPAY_CURRENCY"
+                       description="VMPAYMENT_GERCPAY_GERCPAY_CURRENCY_DESC"
+                >
+                    <option value="UAH">грн.</option>
+                </field>
+                <field name="gercpay_status_pending"
+                       type="vmorderstate"
+                       scope="com_virtuemart"
+                       default="P"
+                       label="VMPAYMENT_GERCPAY_STATUS_PENDING"
+                       description="VMPAYMENT_GERCPAY_STATUS_PENDING_DESC"
+                />
+                <field name="gercpay_status_success"
+                       type="vmorderstate"
+                       scope="com_virtuemart"
+                       default="C"
+                       label="VMPAYMENT_GERCPAY_STATUS_SUCCESS"
+                       description="VMPAYMENT_GERCPAY_STATUS_SUCCESS_DESC"
+                />
+                <field name="gercpay_status_refunded"
+                       type="vmorderstate"
+                       scope="com_virtuemart"
+                       default="R"
+                       label="VMPAYMENT_GERCPAY_STATUS_REFUNDED"
+                       description="VMPAYMENT_GERCPAY_STATUS_REFUNDED_DESC"
+                />
+            </fieldset>
+        </fields>
+    </vmconfig>
+    <updateservers>
+        <!-- Note: No spaces or linebreaks allowed between the server tags -->
+        <server type="extension" name="VirtueMart plg_vmpayment_gercpay Update Site">
+            <![CDATA[https://raw.githubusercontent.com/webdevconcord/joomla-virtuemart/master/update.xml]]></server>
+    </updateservers>
+</extension>
