@@ -87,6 +87,6 @@
     <updateservers>
         <!-- Note: No spaces or linebreaks allowed between the server tags -->
         <server type="extension" name="VirtueMart plg_vmpayment_gercpay Update Site">
-            <![CDATA[https://raw.githubusercontent.com/webdevconcord/joomla-virtuemart/master/update.xml]]></server>
+            <![CDATA[https://raw.githubusercontent.com/gercpay/joomla-virtuemart/master/update.xml]]></server>
     </updateservers>
 </extension>
