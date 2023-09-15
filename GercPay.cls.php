@@ -26,7 +26,7 @@ class GercPay
 
     protected $secret_key = '';
 
-    const URL = 'https://api.gercpay.com.ua/';
+    const URL = 'https://api.gercpay.com.ua/api/';
 
     /**
      * @var string[]
